@@ -1,17 +1,19 @@
-%define name glpi-plugin-reports
-%define version 1.5.0
-%define release %mkrel 1
+%if %mandriva_branch == Cooker
+%define release %mkrel 2
+%else
+%define subrel 1
+%define release %mkrel 0
+%endif
 
 Summary: SNMP agent plugin
-Name: %{name}
-Version: %{version}
+Name: glpi-plugin-reports
+Version: 1.5.0
 Release: %{release}
 License: GPL
 Group: Monitoring
 Url: https://forge.indepnet.net/projects/reports
 Source0: https://forge.indepnet.net/attachments/download/926/glpi-reports-%{version}.tar.gz
 BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}
 
 %description
 This plugin enables additional reports.
@@ -28,19 +30,18 @@ in your bays. And so know the space and its power consumption and heat
 dissipation.
 
 %prep
+
 %setup -q -n reports
 
+find . -type f | xargs chmod 644
+find . -type d | xargs chmod 755
+
 %install
-rm -rf %{buildroot}
 
 install -d -m 755 %{buildroot}%{_datadir}/glpi/plugins/reports
 cp -ap * %{buildroot}%{_datadir}/glpi/plugins/reports
 rm -rf %{buildroot}%{_datadir}/glpi/plugins/reports/docs
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc docs/*
 %{_datadir}/glpi/plugins/reports

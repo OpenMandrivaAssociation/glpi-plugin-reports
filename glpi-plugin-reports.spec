@@ -1,5 +1,5 @@
 %define name glpi-plugin-reports
-%define version 1.4.0
+%define version 1.5.0
 %define release %mkrel 1
 
 Summary: SNMP agent plugin
@@ -9,7 +9,7 @@ Release: %{release}
 License: GPL
 Group: Monitoring
 Url: https://forge.indepnet.net/projects/reports
-Source0: https://forge.indepnet.net/attachments/download/136/glpi-reports-%{version}.tar.gz
+Source0: https://forge.indepnet.net/attachments/download/926/glpi-reports-%{version}.tar.gz
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}
 

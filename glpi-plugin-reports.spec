@@ -45,3 +45,23 @@ rm -rf %{buildroot}%{_datadir}/glpi/plugins/reports/docs
 %files
 %doc docs/*
 %{_datadir}/glpi/plugins/reports
+
+
+%changelog
+* Sat Feb 04 2012 Oden Eriksson <oeriksson@mandriva.com> 1.5.0-2mdv2012.0
++ Revision: 771132
+- various fixes
+
+* Sat Feb 04 2012 Oden Eriksson <oeriksson@mandriva.com> 1.5.0-1
++ Revision: 771092
+- 1.5.0
+
+* Fri May 27 2011 Guillaume Rousse <guillomovitch@mandriva.org> 1.4.0-1
++ Revision: 680280
+- new version
+
+* Fri Jul 30 2010 Guillaume Rousse <guillomovitch@mandriva.org> 1.3.0-1mdv2011.0
++ Revision: 563563
+- import glpi-plugin-reports
+
+
